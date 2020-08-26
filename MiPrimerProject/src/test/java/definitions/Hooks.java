@@ -1,23 +1,28 @@
 package definitions;
 
-import org.junit.After;
-import org.junit.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Hooks {
+import java.util.concurrent.TimeUnit;
 
+public class Hooks {
     public static WebDriver driver;
 
     @Before
     public static void setUp(){
-        System.setProperty("webdriver.chrome.driver","src\\test\\resources\\driver\\chromedriver.exe");
+
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
     @After
     public static void tearDown(){
+        driver.manage().deleteAllCookies();
         driver.close();
     }
 

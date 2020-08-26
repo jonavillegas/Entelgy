@@ -1,13 +1,22 @@
 Feature: Historia de carrito de compras
-  como cliente
-  necesito realizar la selección de productos
-  para realidar una compra
+  Como cliente
+  necesito realizar seleccionar mis productos
+  para realizar una compra
 
-  Scenario: Compra con datos de tarjeta credito
+  Scenario: Compra con datos de tarjeta valido
     Given validar que la web este disponible
     When generar tarjeta valida
-    And Obtener los datos de la tarjeta
-    And seleccionar la cantidad "4"
+    And obtener los datos de la tarjeta
+    And seleccionar la catidad "5"
     And comprar el producto
     And ingresar los datos de la tarjeta
     And pagar el producto
+
+
+
+
+
+
+
+
+
