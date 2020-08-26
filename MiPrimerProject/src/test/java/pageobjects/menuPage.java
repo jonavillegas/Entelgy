@@ -23,9 +23,8 @@ public class menuPage {
     public void clickGenerarTarjeta(){
         wait.until(ExpectedConditions.visibilityOf(linkGenerarTarjeta));
         linkGenerarTarjeta.click();
+
     }
-
-
 
 
 }
