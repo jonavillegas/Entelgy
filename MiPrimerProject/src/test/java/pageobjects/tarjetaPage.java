@@ -24,6 +24,7 @@ public class tarjetaPage {
         driver =dvr;
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
+        //test
     }
 
 }
